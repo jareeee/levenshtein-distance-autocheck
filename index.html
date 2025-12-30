@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Autokoreksi Levenshtein</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Autokoreksi & Analisis Algoritma</h1>
+            <p>Implementasi Levenshtein Distance (Rekursif vs Iteratif)</p>
+        </header>
+
+        <section class="card demo-section">
+            <h2>Autokoreksi</h2>
+            <div class="input-group">
+                <input type="text" id="wordInput" placeholder="Ketik kata yang salah..." autocomplete="off">
+            </div>
+            
+            <div id="suggestionBox" class="suggestion-box hidden">
+                <p>Apakah maksud Anda:</p>
+                <div id="result" class="result-word"></div>
+                <div id="stats" class="stats-info"></div>
+            </div>
+        </section>
+
+        <section class="card benchmark-section">
+            <h2>Analisis Kompleksitas</h2>
+            <p>Bandingkan performa algoritma Recursive dengan Iteratif.</p>
+            
+            <div class="controls">
+                <button id="btnBenchmark" class="btn-primary">
+                    Jalankan Benchmark
+                </button>
+                <div id="benchmarkStatus" class="status-msg"></div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="algoChart"></canvas>
+            </div>
+
+            <div id="analysisResult" class="analysis-text hidden">
+                <h3>Hasil Analisis</h3>
+                <p>
+                    <strong>Recursive:</strong> Memiliki kompleksitas waktu O(3^n). Sangat lambat untuk input panjang karena banyak perhitungan berulang.
+                </p>
+                <p>
+                    <strong>Iteratif:</strong> Memiliki kompleksitas waktu O(m*n). Jauh lebih efisien dan stabil untuk input panjang.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
